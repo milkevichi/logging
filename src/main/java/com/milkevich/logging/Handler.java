@@ -5,7 +5,17 @@ package com.milkevich.logging;
  */
 public abstract class Handler {
 
+    private Formatter formatter;
+
     protected Handler() {
+    }
+
+    public Formatter getFormatter() {
+        return formatter;
+    }
+
+    public void setFormatter(Formatter formatter) {
+        this.formatter = formatter;
     }
 
     public abstract void writeMessage(Message msg);

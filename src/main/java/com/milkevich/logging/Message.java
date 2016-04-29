@@ -1,5 +1,8 @@
 package com.milkevich.logging;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 /**
  * @author IMilkevich on 23/04/16.
  */
@@ -12,11 +15,13 @@ public class Message {
     private String text;
     private long millisDate;
     private Throwable thrownException;
+    private Object[] parameters;
 
     public Message(String text) {
         this.text = text;
         millisDate = System.currentTimeMillis();
-    }
+
+     }
 
     public String getText() {
         return text;
@@ -64,6 +69,14 @@ public class Message {
 
     public void setThrownException(Throwable thrownException) {
         this.thrownException = thrownException;
+    }
+
+    public Object[] getParameters() {
+        return parameters;
+    }
+
+    public void setParameters(Object[] parameters) {
+        this.parameters = parameters;
     }
 }
 
